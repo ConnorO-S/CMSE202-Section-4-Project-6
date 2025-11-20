@@ -1,12 +1,12 @@
-### CMSE202-Section-4-Project-6
+# CMSE202-Section-4-Project-6
 What are the primary factors that determine the health of an ecosystem (animals +
 environment)? How accurately can ecosystem models reflect real world scenarios? Can
 they be used to predict outcomes and inform policies for real ecosystems?
 
-### Classes
+# Classes
 There are 5 main classes and sub-classes used in this project. The Classes are World and Animal. The sub-classes are Carnivore, Omnivore, Herbivore
 ## World(rows, cols, environment, animals)
-The World class takes 4 arguments
+#### The World class takes 4 arguments
 
     rows/cols: these determine the number of rows and columns. These values accept an integer
     
@@ -17,7 +17,7 @@ The World class takes 4 arguments
     An example of a complete World class is:
     Example_world = World(rows=20, cols=20, environment='Jungle', animals = Example_Animal_lst)
 
-The World class has several relevant functions
+#### The World class has several relevant functions
 
     World.(self, x_pos, y_pos): This functions accepts the x and y position(Intigers) of a tile on the world and returns a list containing the amount of water, vegetation and meat on the selected tile
 
@@ -40,7 +40,7 @@ The World class has several relevant functions
     The third nested list is a list of tuples containing the average amount of water, vegitation and meat per tile in that order ex. (34.7, 30.02, 9.9)
 
 ## Animal(posX, posY, max_satiety, speed, vision, lifespan)
-The animal class takes 6 arguments
+#### The animal class takes 6 arguments
 
     posX/posY: The initial x and y position of the animal. These arguments accept an integer
 
@@ -53,7 +53,7 @@ The animal class takes 6 arguments
 
     lifespan: The number to timesteps an animal can live before it dies of old age
 
-The animal class has several relevant functions
+#### The animal class has several relevant functions
 
     Animal.look(self): This reaturns a list of the x an y cordinates of the board tiles you can see
 
@@ -65,8 +65,8 @@ The animal class has several relevant functions
 
     Animal.reproduce(self, world): This function accepts a world object and checks if the animal is old enough, has enough satiety and if there is an another animal nearby in which case it adds a new animal to the list of animals associated with the provided world object.
 
-The Animal class has three sub-classes all of these subclass accept the same arguments however each of the sub-classes have different functions
-# Carnivore
+### The Animal class has three sub-classes all of these subclass accept the same arguments however each of the sub-classes have different functions
+### Carnivore
 
     Carnivore.decide_move(self, world): Accepts a world. If satiety is sufficiently high it runs Animal.reproduce(self, world). Otherwise it looks at all tiles within the range of vision and moves to the one with the highest amount of meat. If there is no meat on a surrounding tile it calls the hunt function instead
 
@@ -75,13 +75,13 @@ The Animal class has three sub-classes all of these subclass accept the same arg
     Carnivore.eat(self, meat_present): accepts 1 intiger or float. it returns the remaining meat and adjusts the satiety of the given animal based on the difference between meat_present and the remaining meat.
 
 
-# Omnivore
+### Omnivore
 
     Omnivore.decide_move(self, world): Accepts a world. If satiety is sufficiently high it runs Animal.reproduce(self, world). Otherwise it looks at all tiles within the range of vision and moves to the one with the highest combined amount of meat and vegetation. 
 
     Omnivore.eat(self, veg_present, meat_present): Accepts 2 intigers or floats, returns a list containing the amount of remaining vegetation and meat. eats meat first and then vegetation and increases current satiety
 
-# Herbivore
+### Herbivore
 
     Herbivore.decide_move(self, world): Accepts a world. If satiety is sufficiently high it runs Animal.reproduce(self, world). Otherwise it looks at all tiles within the range of vision and moves to the one with the highest combined amount of vegetation
 
@@ -89,39 +89,38 @@ The Animal class has three sub-classes all of these subclass accept the same arg
 
 
 
-###  Here is some example code showing how to run a simulation
+##  Here is some example code showing how to run a simulation
 """
-# Import Relevant Information
+### Import Relevant Information
 
-###Import relevent classes
-from Environment_Simulation import World
-from Environment_Simulation import Animal
-from Environment_Simulation import Carnivore
-from Environment_Simulation import Omnivore
-from Environment_Simulation import Herbivore
+    from Environment_Simulation import World
+    from Environment_Simulation import Animal
+    from Environment_Simulation import Carnivore
+    from Environment_Simulation import Omnivore
+    from Environment_Simulation import Herbivore
 
-import matplotlib.pyplot as plt
-import numpy as np
-import random
-from IPython.display import display, clear_output
-import time
-import matplotlib.colors as mcolors
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import random
+    from IPython.display import display, clear_output
+    import time
+    import matplotlib.colors as mcolors
 
 
-# Create and fill a list with animals
-example_animal_list = []
+### Create and fill a list with animals
+    example_animal_list = []
 
-for x in range(50): ## Creates 50 Herbivores
-    example_animal_list.append(Herbivore(random.randint(0, 19), random.randint(0, 19), 50, 1, 1, 20))
-for x in range(5): ## Creates 5 Omnivores
-    example_animal_list.append(Omnivore(random.randint(0, 19), random.randint(0, 19), 50, 2, 2, 25))
-for x in range(4):  ## Creates 4 Carnivores
-    example_animal_list.append(Carnivore(random.randint(0, 19), random.randint(0, 19), 50, 3, 3, 30))
+    for x in range(50): ## Creates 50 Herbivores
+        example_animal_list.append(Herbivore(random.randint(0, 19), random.randint(0, 19), 50, 1, 1, 20))
+    for x in range(5): ## Creates 5 Omnivores
+        example_animal_list.append(Omnivore(random.randint(0, 19), random.randint(0, 19), 50, 2, 2, 25))
+    for x in range(4):  ## Creates 4 Carnivores
+        example_animal_list.append(Carnivore(random.randint(0, 19), random.randint(0, 19), 50, 3, 3, 30))
 
-# Create a World
-Example_world = World(rows=20, cols=20, environment='Jungle', animals = example_animal_list)
+### Create a World
+    Example_world = World(rows=20, cols=20, environment='Jungle', animals = example_animal_list)
 
-# Run an animation
-Example_world.run_animation(time=50)
+### Run an animation
+    Example_world.run_animation(time=50)
 """
                     
