@@ -123,4 +123,21 @@ There are 5 main classes and sub-classes used in this project. The Classes are W
 ### Run an animation
     Example_world.run_animation(time=50)
 """
+
+## Group Member Contributions
+### Connor Owen-Smith
+    World Class
+    Carnivore Hunt function
+    Animal Get Position and Reproduce Functions
+    All animal subclasses decided move function modifications
+    Getting all classes and subclasses to work together and do things withought crashing
+    Parts of the Presentation slideshow and project report
+
+### Allan Morse
+    ***
+
+### Zach Nolff
+    *** 
+    
+    
                     
