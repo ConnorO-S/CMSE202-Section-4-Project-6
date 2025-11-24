@@ -134,7 +134,11 @@ There are 5 main classes and sub-classes used in this project. The Classes are W
     Parts of the Presentation slideshow and project report
 
 ### Allan Morse
-    ***
+    Animal class
+    Herbivore class
+    Animal sided simulations
+    Parts of presentation and report pretaining to what I worked on
+    
 
 ### Zach Nolff
     *** 
