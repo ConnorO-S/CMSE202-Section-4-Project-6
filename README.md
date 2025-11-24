@@ -132,6 +132,7 @@ There are 5 main classes and sub-classes used in this project. The Classes are W
     All animal subclasses decided move function modifications
     Getting all classes and subclasses to work together and do things withought crashing
     Parts of the Presentation slideshow and project report
+    README.md
 
 ### Allan Morse
     Animal class
